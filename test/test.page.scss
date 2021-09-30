@@ -1,0 +1,114 @@
+.container{
+    .bottom-line{
+        border-bottom: 1px solid #707070;
+        padding      : 5%;
+        margin       : 10% 0px 2%;
+        h6{
+            margin          : auto;
+            background-color: white;
+            padding         : 10px;
+            border          : 1px solid #c5c5c5;
+            border-radius   : 5px;
+        }
+        
+    }
+}
+
+.left, .right{
+    width  : 50%;
+    display: inline-block;
+
+    ion-radio{
+        margin-right: 7px;
+        vertical-align: bottom;
+    }
+
+    .label{
+        vertical-align: text-bottom;
+    }
+}
+
+.left, .right, .last{
+    width  : 33%;
+    display: inline-block;
+    ion-radio{
+        margin-right: 7px;
+        vertical-align: bottom;
+    }
+
+    .label{
+        vertical-align: text-bottom;
+    }
+}
+ion-card{
+    border-radius: 15px;
+}
+ion-item{
+    border: none;
+    border-bottom: 2px solid #702E8F;
+  
+    ion-icon{
+        font-size: 20px;
+        color: #E59613;
+    }
+}
+
+.new-background-color {
+    --background: #7D3C98;
+  }
+  
+  .sc-ion-card-md-s img {
+    display: block;
+    width  : 10%;
+  }
+  
+  .input_style {
+    border       : 1px solid grey;
+    border-radius: 10px !important;
+    margin-top   : 20px;
+    --min-height : auto;
+    padding      : 2px;
+  }
+  
+  .btn1 {
+    --background   : #e99a21 !important;
+    --color        : white;
+    --border-radius: 10px;
+    margin         : auto;
+    display        : table;
+    width          : 50%;
+  }
+  
+  .step_btn {
+    text-transform : capitalize;
+    font-size      : 10px;
+    --background   : #7D3C98;
+    --border-radius: 15px;
+  }
+  
+  .skip_btn {
+    font-size      : 10px;
+    --border-radius: 15px;
+    --background   : #e99a21;
+  }
+  
+  .errtxt {
+    // font-family  : 'OpenSans-Semibold';
+    color        : red;
+    // position: absolute;
+    padding-left : 11px;
+    // margin-top: -20px;
+  }
+  
+  .ditem.item-ios {
+    padding-left      : 16px;
+    padding-left      : 16px;
+    border-radius     : 0;
+    position          : relative;
+    font-size         : 1.7rem;
+    color             : #000;
+    background-color  : #fff;
+    -webkit-transition: background-color 200ms linear;
+    transition        : background-color 200ms linear;
+    margin            : 10px 0 20px 0;
+  }

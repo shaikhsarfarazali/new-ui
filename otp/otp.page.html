@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>OTP VERIFICATION</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="otp" (ngSubmit)="submitForm(otp.value)">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <div>
+            <p>Please enter the four digit OTP sent on your
+              mobile number</p>
+            <p>This number will be considered as your registered
+              mobile number for your company</p>
+          </div>
+        </ion-col>
+  
+        <ion-col size="12" >
+          <div class="ion-text-center image">
+            <img src="../../assets/images/otp.png" alt="otp">
+          </div>
+        </ion-col>
+  
+        <ion-col size="12">
+          <div class="ion-text-center form">
+            <ion-card>
+              <ion-input formControlName="otpno" placeholder="1246" required></ion-input>
+            </ion-card>
+            <ion-text color="danger" *ngIf="isSubmitted && errorControl.otpno.errors?.required">
+              OTP is required.
+            </ion-text>
+            <p><ion-icon name="chatbubble"></ion-icon> Code expire in: <b>01:30</b></p>
+            
+            <p class="mail">Email verification link sent to your email id</p>
+           
+            <ion-card>
+              <ion-item>
+                <ion-label><ion-icon name="mail"></ion-icon></ion-label>
+                <ion-input formControlName="email" placeholder="youremail@example.com" required></ion-input>
+              </ion-item>
+            </ion-card>
+            <ion-text color="danger" *ngIf="isSubmitted && errorControl.email.errors?.required">
+              Email is required.
+            </ion-text>
+            <ion-text color="danger" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+              Email is Invalid
+            </ion-text>
+            <p>Please click on the link to verify</p>
+            <h6>Verification Link Not received ?Resend</h6>
+            <p>Link Verified ? <button type="submit">CLICK HERE TO CHECK</button></p>
+  
+            <p class="alternate">If you wish to provide any alternate Mobile Number
+              please input in below before submitting OTP.</p>
+  
+              <p>Alternative Mobile Number</p>
+  
+              <ion-card class="mobile-no">
+                <ion-item>
+                  <ion-label><ion-icon name="call"></ion-icon></ion-label>
+                  <ion-label class="label-no">+91</ion-label>
+                  <ion-input formControlName="mobile" minlenght="10" maxlenght="10" required></ion-input>
+                </ion-item>
+                <ion-text color="danger" *ngIf="isSubmitted && errorControl.mobile.errors?.required">
+                  Mobile is required.
+                </ion-text>
+                <ion-text color="danger" *ngIf="isSubmitted && errorControl.mobile.errors?.maxlength">
+                  Mobile should be max 10 chars long.
+                </ion-text>
+                <ion-text color="danger" *ngIf="isSubmitted && errorControl.mobile.errors?.minlength">
+                  Mobile should be min 10 chars long.
+                </ion-text>
+                <ion-text color="danger" *ngIf="isSubmitted && errorControl.mobile.errors?.pattern">
+                  Mobile is Invalid
+                </ion-text>
+              </ion-card>
+              <button type="submit" class="mobile-button">
+                <img src="../../assets/images/icon/right-arrow.png" alt="button">
+              </button>
+          </div>
+          
+        </ion-col>
+        <ion-col size="12">
+          <p>OTP not received or need again ? Resend OTP
+            Not able to signup? Contact us
+          </p>
+        </ion-col>
+        
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

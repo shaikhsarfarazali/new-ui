@@ -1,0 +1,218 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>REVIEW KYC DETAILS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="skip-button">
+      <ion-col class="ion-text-right">
+        <ion-button>SKIP</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="step">
+      <ion-col>
+        <img src="../../assets/images/icon/step1.png" alt="">
+      </ion-col>
+      <ion-col>
+        <img src="../../assets/images/icon/step2.png" alt="">
+      </ion-col>
+      <ion-col>
+        <img src="../../assets/images/icon/step3.png" alt="">
+      </ion-col>
+      <ion-col size="12" class="ion-text-center">
+        <h6>Please review data & documents uploaded by you</h6>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="main">
+      <ion-col size="12">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              <span>PAN DETAILS</span>
+              <ion-icon name="create-outline"></ion-icon>
+            </ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-item>
+              <ion-label>
+                <ion-icon name="person"></ion-icon>
+              </ion-label>
+              <ion-input value="Full Name" readonly></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>
+                <ion-icon name="person"></ion-icon>
+              </ion-label>
+              <ion-input value="Pan Card No" readonly></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>
+                <ion-icon name="calendar-clear"></ion-icon>
+              </ion-label>
+              <ion-input value="D.O.B" readonly></ion-input>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              <span>PERSONAL DETAILS</span>
+              <ion-icon name="create-outline"></ion-icon>
+            </ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-item>
+              <ion-label>
+                <ion-icon name="man"></ion-icon>
+              </ion-label>
+              <ion-input value="Father Name" readonly></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>
+                <ion-icon name="woman"></ion-icon>
+              </ion-label>
+              <ion-input value="Mother Name" readonly></ion-input>
+            </ion-item>
+
+            <h6>
+              <ion-label>Marital Status- <span>Married</span></ion-label>
+            </h6>
+            
+            <h6>
+              <ion-label>Gender- <span>Female</span></ion-label>
+            </h6>
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              <span>WORK DETAILS</span>
+              <ion-icon name="create-outline"></ion-icon>
+            </ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-item>
+              <ion-label>
+                <ion-icon name="briefcase"></ion-icon>
+              </ion-label>
+              <ion-input value="Occupation Details" readonly></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>
+                <ion-icon name="cash"></ion-icon>
+              </ion-label>
+              <ion-input value="Annual Income" readonly></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>
+                <ion-icon name="cash"></ion-icon>
+              </ion-label>
+              <ion-input value="Net Wort" readonly></ion-input>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              <span>BANK DETAILS</span>
+              <ion-icon name="create-outline"></ion-icon>
+            </ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-item>
+              <ion-label>
+                <ion-icon name="card"></ion-icon>
+              </ion-label>
+              <ion-input value="Account No" readonly></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>
+                <ion-icon name="cash"></ion-icon>
+              </ion-label>
+              <ion-input value="Account Type" readonly></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>
+                <ion-icon name="person"></ion-icon>
+              </ion-label>
+              <ion-input value="IFSC" readonly></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>
+                <ion-icon name="person"></ion-icon>
+              </ion-label>
+              <ion-input value="Bank Name" readonly></ion-input>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              <span>Uploaded Documents</span>
+              <ion-icon name="create-outline"></ion-icon>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-row>
+              <ion-col>
+                <div class="btn">
+                  <input type="file" (change)="fileEvent($event,'pic')">
+                  <img src="{{camImg}}" alt="">
+                </div>
+              </ion-col>
+              <ion-col>
+                <div class="btn">
+                  <input type="file" (change)="fileEvent($event,'cheque')">
+                  <img src="{{chequeImg}}" alt="">
+                </div>
+              </ion-col>
+              <ion-col>
+                <div class="btn">
+                  <input type="file" (change)="fileEvent($event, 'sign')"/>
+                  <img src="{{signImg}}" alt="">
+                </div>
+              </ion-col>
+            </ion-row>
+
+            <div class="ion-text-center">
+              <ion-button>Reconfirm & Accept</ion-button>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

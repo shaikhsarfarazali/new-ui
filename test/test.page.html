@@ -1,0 +1,205 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start">
+      <ion-back-button style="color: white;" text="">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-row style="padding-top: 1%;">
+      <ion-title style="color: white; text-align: center;">
+        PERSONAL DETAILS
+      </ion-title>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item style="height: 45px;">
+    <ion-button class="step_btn" size="small">Stage 2-Step-1</ion-button>
+    <ion-button class="skip_btn" slot="end">
+      <ion-label (click)="showActionController()">
+        <ion-icon style="font-size: 15px;" ios="ios-call" md="md-call">
+        </ion-icon>
+      </ion-label> &nbsp;&nbsp;
+      <span style="font-family: auto;border-left: 3px solid white;" (click)="userdata.skip()"> &nbsp;&nbsp; SKIP</span>
+    </ion-button>
+  </ion-item>
+
+  <ion-card style="border-radius: 0px; box-shadow: none !important;--background: #e99a212b;"
+    class="ion-no-margin ion-margin-top">
+    <ion-item>
+      <ion-icon style="color: #e99a21;font-size: 25px;" name="help-circle">
+      </ion-icon>
+      &nbsp;
+      <ion-label style="font-size: 13px;border-left: 3px solid #e99a21;padding-left: 5px;"
+        class="ion-no-margin ion-text-wrap"> WHAT IS
+        KYC REGISTRATION PROCESS?
+      </ion-label>
+      <ion-icon class="ion-float-right" name="ios-information-circle-outline"  (click)="show()" *ngIf="!showkra">
+      </ion-icon>
+      <ion-icon class="ion-float-right" name="remove" (click)="hide()" *ngIf="showkra"></ion-icon>
+    </ion-item>
+    <ion-card-content *ngIf="showkra">
+      KYC or "Know Your Client" is primary requirement for opening your trading-cum-demat account with a broker.
+      It is used for client identification process. SEBI has prescribed certain requirements relating to KYC norms for
+      Financial Institutions
+      and Financial Intermediaries to 'know' their clients. This is in the form of verification of identity and address,
+      providing information of
+      financial status, occupation and such other demographic information. Applicant must be KYC complaint while
+      investing with any SEBI registered intermediary and in Indian Financial Markets.
+    </ion-card-content>
+  </ion-card>
+  <hr>
+
+  <form [formGroup]="kycform" style="border-top: 1px solid grey;">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-card>
+            <ion-card-content>
+              <ion-item>
+                <ion-label><ion-icon name="person"></ion-icon></ion-label>
+                <ion-input formControlName="fullName" placeholder="Full Name *"></ion-input>
+              </ion-item>
+              <ion-text color="danger" *ngIf="!kycform.controls['fullName'].valid && kycform.controls['fullName'].dirty">
+                Invalid.
+              </ion-text>
+              <ion-text color="danger" *ngIf="kycform.controls['fullName'].hasError('minlength') && !(kycform.controls['fullName'].hasError('pattern'))">
+                Min 3 characters.
+              </ion-text>
+              <ion-text color="danger" *ngIf="kycform.controls['fullName'].hasError('maxlength') && !(kycform.controls['fullName'].hasError('pattern'))">
+                Max 40 characters.
+              </ion-text>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+  
+        <ion-col size="12">
+          <ion-card>
+            <ion-card-content>
+              <ion-item>
+                <ion-label><ion-icon src="../../assets/icon/KYC_reg_icons/email.svg"></ion-icon></ion-label>
+                <ion-input formControlName="email" placeholder="Email *"></ion-input>
+              </ion-item>
+              <ion-text color="danger" *ngIf="!kycform.controls['email'].valid && kycform.controls['email'].dirty && kycform.controls['email'].hasError('pattern')" >
+                Invalid.
+              </ion-text>
+              <ion-text color="danger" *ngIf="kycform.controls['email'].hasError('required')&&nametype&&submit" >
+                Email ID Required *
+              </ion-text>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+  
+        <ion-col size="12">
+          <ion-card>
+            <ion-card-content>
+              <ion-item>
+                <ion-label><ion-icon src="../../assets/icon/KYC_reg_icons/mother_name.svg"></ion-icon></ion-label>
+                <ion-input formControlName="motherName" placeholder="Mother Name *"></ion-input>
+              </ion-item>
+              <ion-text color="danger" *ngIf="!kycform.controls['motherName'].valid && kycform.controls['motherName'].dirty && kycform.controls['motherName'].hasError('pattern')">
+                Invalid.
+              </ion-text>
+              <ion-text color="danger" *ngIf="kycform.controls['motherName'].hasError('minlength') && !(kycform.controls['motherName'].hasError('pattern'))">
+                Min 3 characters.
+              </ion-text>
+              <ion-text color="danger" *ngIf="kycform.controls['motherName'].hasError('maxlength') && !(kycform.controls['motherName'].hasError('pattern'))">
+                Max 40 characters.
+              </ion-text>
+              <ion-text color="danger" *ngIf="kycform.controls['motherName'].hasError('required')&&nametype&&submit">
+                Mother Name Required *
+              </ion-text>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+  
+        <ion-col size="12">
+          <ion-card>
+            <ion-card-content>
+              <ion-item>
+                <ion-label><ion-icon name="person"></ion-icon></ion-label>
+                <ion-input formControlName="fatherName" placeholder="Father Name *" *ngIf="checkRtaValue=='true'"></ion-input>
+              </ion-item>
+              <ion-text color="danger" *ngIf="!kycform.controls['fatherName'].valid && kycform.controls['fatherName'].dirty && kycform.controls['fatherName'].hasError('pattern')">
+                Invalid.
+              </ion-text>
+              <ion-text color="danger" *ngIf="kycform.controls['fatherName'].hasError('minlength') && !(kycform.controls['fatherName'].hasError('pattern'))">
+                Min 3 characters.
+              </ion-text>
+              <ion-text color="danger" *ngIf="kycform.controls['fatherName'].hasError('maxlength') && !(kycform.controls['fatherName'].hasError('pattern'))">
+                Max 40 characters.
+              </ion-text>
+              <ion-text color="danger" *ngIf="kycform.controls['fatherName'].hasError('required')&&nametype&&submit">
+                Father Name Required *
+              </ion-text>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+
+      <div class="container">
+        <ion-row>
+          <ion-col class="ion-text-center bottom-line">
+            <h6>Marital Status <b style="color: red;">*</b></h6>
+            <br>
+            <ion-radio-group value="single" formControlName="marriedStatus">
+              <div class="left">
+                <ion-radio color="radio-green" value="single"></ion-radio><label for="">Single</label>
+              </div>
+              <div class="right">
+                <ion-radio color="radio-green" value="married"></ion-radio><label for="">Married</label>
+              </div>
+            </ion-radio-group>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col class="ion-text-center bottom-line">
+            <h6>Gender <b style="color: red;">*</b></h6>
+            <br>
+            <ion-radio-group value="male" formControlName="gender">
+              <div class="left">
+                <ion-radio color="radio-green" value="male"></ion-radio><label for="">Male</label>
+              </div>
+              <div class="right">
+                <ion-radio color="radio-green" value="female"></ion-radio><label for="">Female</label>
+              </div>
+              <div class="last">
+                <ion-radio color="radio-green" value="other"></ion-radio><label for="">Other</label>
+              </div>
+            </ion-radio-group>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col class="ion-text-center bottom-line">
+            <h6>Are you Politically Exposed Person(PEP)? <b style="color: red;">*</b></h6>
+            <br>
+            <ion-radio-group value="PEP" [formControl]="kycform.controls['pepstatus']">
+              <div class="left">
+                <ion-radio color="radio-green" value="PEP"></ion-radio><label for="">PEP</label>
+              </div>
+              <div class="right">
+                <ion-radio color="radio-green" value="relatedPEP"></ion-radio><label for="">Related to PEP</label>
+              </div>
+              <div class="last">
+                <ion-radio color="radio-green" value="NA"></ion-radio><label for="">NA</label>
+              </div>
+            </ion-radio-group>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-grid>
+
+  </form>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <ion-button class="btn1" mode="ios" type="submit" (click)="submitdetails()">CONTINUE
+          <ion-spinner *ngIf="disablespinner" class="spinnerSet" name="bubbles"></ion-spinner>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

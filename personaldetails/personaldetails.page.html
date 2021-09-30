@@ -1,0 +1,158 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>personaldetails</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="personal" (ngSubmit)="submitForm(personal.value)">
+    <ion-grid>
+      <ion-row class="skip-button">
+        <ion-col class="ion-text-right">
+          <ion-button>SKIP</ion-button>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row class="step">
+        <ion-col>
+          <img src="../../assets/images/icon/step1.png" alt="">
+        </ion-col>
+        <ion-col>
+          <img src="../../assets/images/icon/step2.png" alt="">
+        </ion-col>
+        <ion-col>
+          <img src="../../assets/images/icon/step3.png" alt="">
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col class="heading">
+          <h6>
+            <ion-icon class="question" name="help-circle"></ion-icon>
+            <span>KNOW YOUR CLIENT (KYC)*</span>
+            <ion-icon class="info" name="information-circle-outline"></ion-icon>
+          </h6>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>
+              <ion-icon name="person"></ion-icon>
+            </ion-label>
+            <ion-input formControlName="name" placeholder="Full Name" required></ion-input>
+          </ion-item>
+          <ion-text color="danger" *ngIf="isSubmitted && errorControl.name.errors?.required">
+            Full Name is required.
+          </ion-text>
+        </ion-col>
+  
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>
+              <ion-icon name="mail"></ion-icon>
+            </ion-label>
+            <ion-input formControlName="email" placeholder="youremail@example.com" required></ion-input>
+          </ion-item>
+          <ion-text color="danger" *ngIf="isSubmitted && errorControl.email.errors?.required">
+            Mail is required.
+          </ion-text>
+        </ion-col>
+  
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>
+              <ion-icon name="man"></ion-icon>
+            </ion-label>
+            <ion-input formControlName="father" placeholder="Father Name" required></ion-input>
+          </ion-item>
+          <ion-text color="danger" *ngIf="isSubmitted && errorControl.father.errors?.required">
+            Father Name is required.
+          </ion-text>
+        </ion-col>
+  
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>
+              <ion-icon name="woman"></ion-icon>
+            </ion-label>
+            <ion-input formControlName="mother" placeholder="Mother Name" required></ion-input>
+          </ion-item>
+          <ion-text color="danger" *ngIf="isSubmitted && errorControl.mother.errors?.required">
+            Mother Name is required.
+          </ion-text>
+        </ion-col>
+  
+        <ion-col size="12">
+            <ion-radio-group value="Married" required>
+              <ion-list-header>
+                <ion-label>Marital Status</ion-label>
+              </ion-list-header>
+          
+                <div class="ion-item">
+                  <ion-radio slot="start" value="Single"></ion-radio>
+                  <ion-label>Single</ion-label>
+                </div>
+             
+                <div class="ion-item">
+                  <ion-radio slot="start" value="Married"></ion-radio>
+                  <ion-label>Married</ion-label>
+                </div>
+           
+            </ion-radio-group>
+        </ion-col>
+  
+        <ion-col size="12" class="gender">
+          <ion-radio-group value="Male" required>
+            <ion-list-header>
+              <ion-label>Gender</ion-label>
+            </ion-list-header>
+        
+            <div class="ion-item">
+              <ion-radio slot="start" value="Male"></ion-radio>
+              <ion-label>Male</ion-label>
+            </div>
+          
+            <div class="ion-item">
+              <ion-radio slot="start" value="Female"></ion-radio>
+              <ion-label>Female</ion-label>
+            </div>
+
+            <div class="ion-item">
+              <ion-radio slot="start" value="Others"></ion-radio>
+              <ion-label>Others</ion-label>
+            </div>
+          </ion-radio-group>
+        </ion-col>
+  
+        <ion-col size="12">
+          <ion-radio-group value="PEP" required>
+            <ion-list-header>
+              <ion-label>Are you Politically Exposed Person(PEP) ?</ion-label>
+            </ion-list-header>
+            <div class="ion-item" style="width: 20%;">
+              <ion-radio slot="start" value="PEP"></ion-radio>
+              <ion-label>PEP</ion-label>
+            </div>
+        
+            <div class="ion-item" style="width: 60%;">
+              <ion-radio slot="start" value="Related to PEP"></ion-radio>
+              <ion-label>Related to PEP</ion-label>
+            </div>
+
+            <div class="ion-item" style="width: 20%;">
+              <ion-radio slot="start" value="NA"></ion-radio>
+              <ion-label>NA</ion-label>
+            </div>
+          </ion-radio-group>
+        </ion-col>
+        
+        <ion-col class="ion-text-center">
+          <ion-button type="submit">CONTINUE</ion-button>
+        </ion-col>
+  
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

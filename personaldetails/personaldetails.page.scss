@@ -1,0 +1,96 @@
+ion-header{
+    ion-toolbar{
+        --background: #702E8F;
+        color: #fff;
+        text-align: center;
+    }
+}
+
+.skip-button{
+    ion-button{
+        --border-radius: 30px;
+        --background: #E59613;
+        width: 100px;
+        margin: 0px;
+    }
+}
+
+.step{
+    margin: 15px 0px;
+}
+
+.heading{
+    background-color: #fff;
+    h6{
+        span{
+            border-left: 3px solid #E59613;
+            margin-left: 6px;
+            padding-left: 6px;
+        }
+        font-weight: 600;
+        ion-icon{
+            font-size: 20px;   
+            vertical-align: sub;
+        }
+        .question{
+            color: #E59613;
+        }
+        .info{
+            float: right;
+        }
+    }
+}
+
+ion-item{
+    border-radius: 15px;
+    border: 1px solid #000;
+    margin-top: 15px;
+
+    ion-icon{
+        color: #E59613;
+        font-size: 20px;
+    }
+}
+
+ion-radio-group{
+    ion-list-header{
+        width: 90%;
+        background-color: #fff;
+        margin: auto;
+        text-align: center;
+        border: 1px solid #555;
+        border-radius: 5px;
+        margin-top: 25px;
+        padding: 0px;
+    }
+
+    .ion-item{
+        margin-top: 20px;
+        border: none;
+        width: 50%;
+        display: inline-block;
+        --background: transparent;
+        text-align: center;
+        ion-radio{
+            margin: 0px 7px 0px 0px;
+            --color: #000;
+            --color-checked: #000;
+        }
+        ion-label{
+            vertical-align: super;
+        }
+    }
+}
+
+.gender{
+    .ion-item{
+        width: 33%;
+    }
+}
+
+ion-button{
+    --background: #E59613;
+    --border-radius: 13px;
+    width: 150px;
+    margin: 20px 0px;
+}

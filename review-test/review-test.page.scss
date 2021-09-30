@@ -1,0 +1,90 @@
+.ion-text-end{
+    ion-button{
+        margin-top     : 10px;
+        width          : 95px;
+        --border-radius: 18px;
+    }
+}
+
+.ion-text-center{
+    ion-button{
+        width          : 210px;
+        --border-radius: 10px;
+    }
+}
+
+ion-icon{
+    color: #d1870f;
+    font-size: 25px;
+}
+
+ion-grid{
+    .scroll{
+        height: 505px;
+        overflow-x: hidden;
+    }
+    p{
+        margin     : auto;
+        text-align : center;
+        font-size  : 13px;
+        font-weight: 900;
+        white-space: nowrap;
+    }
+    ion-row{
+        h6{
+            width       : 95%;
+            padding-left: 10px;
+            border-left : 4px solid #DB9E04;
+            margin      : 15px;
+        }
+        .txt{
+            margin: auto;
+            width: 95%;
+            border-bottom: 1px solid #707070;
+            ion-icon{
+                float: right;
+            }
+        }
+        ion-col{
+            img{
+                margin-left: 15%;
+                max-width: 80%;
+            }
+        }
+        ion-card{
+            width        : 100%;
+            border-radius: 20px;
+            border: 1px solid #707070;
+            ion-card-content{
+                width: 95%;
+                margin: auto;
+                .imgDiv{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 30%;
+                    margin: auto;
+                }
+                ion-item{
+                    border-bottom: 1px solid #707070;
+                }
+                .rows{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    height: 150px;
+                    ion-text{
+                        border-radius: 10px;
+                        margin: 10px;
+                        border: 1px solid #656565;
+                        padding: 4px 10px 4px;
+                        width: 230px;
+                        font-weight: 900;
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}
