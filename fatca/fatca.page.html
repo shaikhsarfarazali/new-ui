@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar color="purple" class="ion-text-center">
+    <ion-title>FATCA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="cont-box">
+      <ion-col>
+        <h6>
+          <ion-icon color="yellow" class="ion-text-start" name="help-circle"></ion-icon>
+          <span> WHAT IS FATCA?</span>
+          <ion-icon class="ion-text-center end" name="information-circle-outline" (click)="openPopover($event)"></ion-icon>
+        </h6>
+      </ion-col>
+    </ion-row>
+    <div class="container">
+      <form class="" [formGroup]="fatcaData">
+        <ion-row>
+          <ion-col class="ion-text-center bottom-line">
+            <h6>Are you resident of india?</h6>
+            <br>
+            <ion-radio-group (ionChange)= "residentStatus($event)" value="Yes">
+              <div class="left">
+                <ion-radio color="radio-green" value="Yes"></ion-radio><label for="">YES</label>
+              </div>
+              <div class="right">
+                <ion-radio color="radio-green" value="No"></ion-radio><label for="">No</label>
+              </div>
+            </ion-radio-group>
+          </ion-col>
+        </ion-row>
+  
+        <ion-row class="ion-text-center">
+          <div class="block-2">
+            <h6>Specify country of residence for Tax Purpose</h6>
+            <ion-item>
+              <ion-select placeholder="Choose Country" formControlName="country">
+                <ion-select-option *ngFor="let country of countries">{{country}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-col>
+  
+            </ion-col>
+          </div>
+        </ion-row>
+        <ion-row class="top-line">
+          <ion-col class="ion-text-center">
+            <h6>Specify to Tax Identity Number Others</h6>
+            <ion-item>
+              <ion-input type="tel" formControlName="taxId" class="common" placeholder="Enter Tax Id No" maxlength="20"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </form>
+
+    </div>
+  </ion-grid>
+  <div class="ion-text-center btn-btm">
+    <ion-button color="yellow" (click)="checkForError(fatcaData.valid,fatcaData.value)">Continue</ion-button>
+  </div>
+
+</ion-content>

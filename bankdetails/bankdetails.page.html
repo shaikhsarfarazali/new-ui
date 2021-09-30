@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>BANK DETAILS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="bank" (ngSubmit)="submitForm(bank.value)">
+    <ion-grid>
+      <ion-row class="skip-button">
+        <ion-col class="ion-text-right">
+          <ion-button>SKIP</ion-button>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row class="step">
+        <ion-col>
+          <img src="../../assets/images/icon/step1.png" alt="">
+        </ion-col>
+        <ion-col>
+          <img src="../../assets/images/icon/step2.png" alt="">
+        </ion-col>
+        <ion-col>
+          <img src="../../assets/images/icon/step3.png" alt="">
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col size="12" class="heading">
+          <h4>BANK DETAILS <ion-icon name="create-outline"></ion-icon></h4>
+        </ion-col>
+  
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>
+              <ion-icon name="card"></ion-icon>
+            </ion-label>
+            <ion-input type="tel" formControlName="Accountno" placeholder="Account No"></ion-input>
+          </ion-item>
+          <ion-text color="danger" *ngIf="isSubmitted && errorControl.Accountno.errors?.required">
+            Account No is required.
+          </ion-text>
+        </ion-col>
+  
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>
+              <ion-icon name="cash"></ion-icon>
+            </ion-label>
+            <ion-input formControlName="Accounttype" placeholder="Account Type"></ion-input>
+          </ion-item>
+          <ion-text color="danger" *ngIf="isSubmitted && errorControl.Accounttype.errors?.required">
+            Account Type is required.
+          </ion-text>
+        </ion-col>
+  
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>
+              <ion-icon name="person"></ion-icon>
+            </ion-label>
+            <ion-input formControlName="ifsc" placeholder="IFSC"></ion-input>
+          </ion-item>
+          <ion-text color="danger" *ngIf="isSubmitted && errorControl.ifsc.errors?.required">
+            IFSC is required.
+          </ion-text>
+        </ion-col>
+  
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>
+              <ion-icon name="home"></ion-icon>
+            </ion-label>
+            <ion-input formControlName="bankname" placeholder="Bank Name"></ion-input>
+          </ion-item>
+          <ion-text color="danger" *ngIf="isSubmitted && errorControl.bankname.errors?.required">
+            Bank Name is required.
+          </ion-text>
+        </ion-col>
+  
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>
+              <ion-icon name="location"></ion-icon>
+            </ion-label>
+            <ion-input formControlName="state" placeholder="State"></ion-input>
+          </ion-item>
+          <ion-text color="danger" *ngIf="isSubmitted && errorControl.state.errors?.required">
+            State is required.
+          </ion-text>
+        </ion-col>
+  
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>
+              <ion-icon name="home"></ion-icon>
+            </ion-label>
+            <ion-input type="number" formControlName="micrcode" placeholder="MICR CODE"></ion-input>
+          </ion-item>
+          <ion-text color="danger" *ngIf="isSubmitted && errorControl.micrcode.errors?.required">
+            MICR CODE is required.
+          </ion-text>
+        </ion-col>
+  
+        <ion-col size="12" class="ion-text-center submit">
+          <ion-button type="submit">CONTINUE</ion-button>
+        </ion-col>
+  
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

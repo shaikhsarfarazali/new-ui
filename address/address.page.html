@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar color="purple" class="ion-text-center">
+    <ion-title>ADDRESS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-end">
+    <ion-button color="yellow">Skip</ion-button>
+  </div>
+  <ion-grid>
+    <ion-row class="steps">
+      <ion-col>
+        <img src="../../assets/images/icon/step1.png" alt="">
+      </ion-col>
+      <ion-col>
+        <img src="../../assets/images/icon/step2.png" alt="">
+      </ion-col>
+      <ion-col>
+        <img src="../../assets/images/icon/step3.png" alt="">
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-text-center">
+      <form [formGroup]="addressData">
+        <ion-col size="12">
+          <ion-card>
+            <ion-card-content>
+              <ion-item>
+                <ion-label>
+                  <ion-icon color="yellow" name="location"></ion-icon>
+                </ion-label>
+                <ion-input type="text" formControlName="address" placeholder="Address" maxlength="500"></ion-input>
+              </ion-item>
+            </ion-card-content>
+            <ion-text *ngIf="address.touched" color="danger">
+              <span *ngIf="address.errors?.required">Address is required.</span>
+              <span *ngIf="address.errors?.minlength && !address.errors?.pattern">Address must be atleast 8 characters.</span>
+              <span *ngIf="address.errors?.pattern && address.dirty">Invalid Address.</span>
+            </ion-text>
+          </ion-card>
+        </ion-col>
+
+        <ion-col size="12">
+          <ion-card>
+            <ion-card-content>
+              <ion-item>
+                <ion-label>
+                  <ion-icon color="yellow" name="locate"></ion-icon>
+                </ion-label>
+                <ion-input type="tel" formControlName="pincode" placeholder="Pin Code" maxlength="6"></ion-input>
+              </ion-item>
+            </ion-card-content>
+            <ion-text *ngIf="pincode.touched" color="danger">
+              <span *ngIf="pincode.errors?.required">Pincode is required.</span>
+              <span *ngIf="pincode.errors?.minlength">Invalid pincode.</span>
+            </ion-text>
+          </ion-card>
+        </ion-col>
+
+        <ion-col size="12">
+          <ion-card>
+            <ion-card-content>
+              <ion-item>
+                <ion-label>
+                  <ion-icon color="yellow" name="navigate"></ion-icon>
+                </ion-label>
+                <ion-input type="text" formControlName="state" placeholder="State" maxlength="30"></ion-input>
+              </ion-item>
+            </ion-card-content>
+            <ion-text *ngIf="state.touched" color="danger">
+              <span *ngIf="state.errors?.required">State is required.</span>
+              <span *ngIf="state.errors?.minlength">State must be atleast 3 characters.</span>
+            </ion-text>
+          </ion-card>
+        </ion-col>
+
+        <ion-col size="12">
+          <ion-card>
+            <ion-card-content>
+              <ion-item>
+                <ion-label>
+                  <ion-icon color="yellow" name="navigate"></ion-icon>
+                </ion-label>
+                <ion-input type="text" formControlName="city" placeholder="City" maxlength="30"></ion-input>
+              </ion-item>
+            </ion-card-content>
+            <ion-text *ngIf="city.touched" color="danger">
+              <span *ngIf="city.errors?.required">City is required.</span>
+              <span *ngIf="city.errors?.minlength">City must be atleast 3 characters.</span>
+            </ion-text>
+          </ion-card>
+        </ion-col>
+
+      </form>
+      <ion-col size="12" class="ion-text-center bottom">
+        <ion-button color="yellow" type="submit" (click)="checkForError(addressData.valid,addressData.value)">CONTINUE</ion-button>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

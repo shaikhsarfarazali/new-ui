@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar color="purple" class="ion-text-center">
+    <ion-title>OPEN ACCOUNT FOR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-end">
+    <ion-button class="skip-btn" color="yellow">Skip</ion-button>
+  </div>
+  <ion-grid>
+    <ion-row class="steps">
+      <ion-col>
+        <img src="../../assets/images/icon/step1.png" alt="">
+      </ion-col>
+      <ion-col>
+        <img src="../../assets/images/icon/step2.png" alt="">
+      </ion-col>
+      <ion-col>
+        <img src="../../assets/images/icon/step3.png" alt="">
+      </ion-col>
+      <ion-col>
+        <img src="../../assets/images/icon/step.png" alt="">
+      </ion-col>
+    </ion-row>
+    <h4 class="ion-text-center"> <strong> Select Option </strong></h4>
+    <ion-row class="cont-box">
+      <ion-col>
+        <h6>
+          <ion-icon color="yellow" class="ion-text-start" name="help-circle"></ion-icon>
+          <span> EQUITY &
+            COMMODITY ?</span>
+          <ion-icon class="ion-text-center end" name="information-circle-outline"></ion-icon>
+        </h6>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-radio-group value="equity">
+            <ion-item>
+              <ion-icon color="yellow" name="trending-up"></ion-icon>
+              <ion-label>Equity</ion-label>
+              <ion-radio color="radio-green" slot="end" value="equity"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-icon color="yellow" name="server"></ion-icon>
+              <ion-label>Commodity</ion-label>
+              <ion-radio color="radio-green" slot="end" value="commodity"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-icon color="yellow" name="navigate"></ion-icon>
+              <ion-label>Mutual Funds</ion-label>
+              <ion-radio color="radio-green" slot="end" value="mutual_funds"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+      </ion-col>
+
+      <ion-col size="12" class="ion-text-center">
+        <ion-button class="btn" color="yellow">CONTINUE</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,130 @@
+<ion-content>
+  <section class="login">
+    <form [formGroup]="login" (ngSubmit)="submitForm(login.value)">
+      <ion-grid>
+        <ion-row class="header">
+          <ion-col class="ion-text-center">
+            <img src="../../assets/images/logo.png" class="img-fluid logo" alt="logo">
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="ion-text-start">
+            <h3>Login / Sign Up</h3>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12">
+            <ion-card>
+              <ion-card-content>
+                <ion-item>
+                  <ion-label>
+                    <ion-icon name="call"></ion-icon>
+                  </ion-label>
+                  <ion-input formControlName="mobile" minlenght="10" maxlenght="10" placeholder="+91 - 9029" required>
+                  </ion-input>
+                </ion-item>
+                <!-- Error messages -->
+                <ion-text color="danger" *ngIf="isSubmitted && errorControl.mobile.errors?.required">
+                  Mobile is required.
+                </ion-text>
+                <ion-text color="danger" *ngIf="isSubmitted && errorControl.mobile.errors?.maxlength">
+                  Mobile should be max 10 chars long.
+                </ion-text>
+                <ion-text color="danger" *ngIf="isSubmitted && errorControl.mobile.errors?.minlength">
+                  Mobile should be min 10 chars long.
+                </ion-text>
+                <ion-text color="danger" *ngIf="isSubmitted && errorControl.mobile.errors?.pattern">
+                  Mobile is Invalid
+                </ion-text>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+
+          <!-- <ion-col size="12">
+            <ion-card>
+              <ion-card-content>
+                <ion-item>
+                  <ion-label><ion-icon name="person"></ion-icon></ion-label>
+                  <ion-input placeholder="Full Name "></ion-input>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col> -->
+
+          <ion-col size="12" *ngIf="emailreq">
+            <ion-card>
+              <ion-card-content>
+                <ion-item>
+                  <ion-label>
+                    <ion-icon name="mail"></ion-icon>
+                  </ion-label>
+                  <ion-input formControlName="email" placeholder="youremail@example.com" required></ion-input>
+                </ion-item>
+                <!-- Error messages -->
+                <ion-text color="danger" *ngIf="isSubmitted && errorControl.email.errors?.required">
+                  Email is required.
+                </ion-text>
+                <ion-text color="danger" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+                  Email is Invalid
+                </ion-text>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+
+          <!-- <ion-col size="12">
+            <ion-card>
+              <ion-card-content>
+                <ion-item>
+                  <ion-label><ion-icon name="newspaper"></ion-icon></ion-label>
+                  <ion-input placeholder="PAN NO"></ion-input>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col> -->
+
+          <!-- <ion-col size="12">
+            <ion-card>
+              <ion-card-content>
+                <ion-item>
+                  <ion-label><ion-icon name="calendar"></ion-icon></ion-label>
+                  <ion-input placeholder="D.O.B"></ion-input>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col> -->
+
+          <ion-col size="12" class="ion-text-center">
+            <p><span>* Kindly Note</span>- Ensure your mobile number and email id is
+              updates in Aadhar to digitally signthe document.</p>
+            <ion-button type="submit">CONTINUE</ion-button>
+            <!-- <ion-button type="submit">EDIT</ion-button> -->
+          </ion-col>
+
+          <ion-col size="12" class="termsaccept">
+            <ion-list>
+              <ion-item>
+                <ion-label>By clicking continue, you agree with our
+                  <a href="#">Terms & conditions</a> and <a href="#"> Privacy Policy</a>.
+                </ion-label>
+                <ion-checkbox formControlName="acceptTerms" slot="start" value="acceptTerms"></ion-checkbox>
+              </ion-item>
+            </ion-list>
+            <p class="ion-text-center contact">Need Help ? <a href="#">Contact Us</a></p>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </form>
+  </section>
+  <!-- <ion-button (click)="takeSnap()">
+    Take Snap
+  </ion-button>
+  -->
+  <img [src]="capturedSnapURL" />
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="selectImage()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

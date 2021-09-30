@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>OCCUPATION DETAILS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="occupation" (ngSubmit)="submitForm(occupation.value)">
+    <ion-grid>
+      <ion-row class="skip-button">
+        <ion-col class="ion-text-right">
+          <ion-button>SKIP</ion-button>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row class="step">
+        <ion-col>
+          <img src="../../assets/images/icon/step1.png" alt="">
+        </ion-col>
+        <ion-col>
+          <img src="../../assets/images/icon/step2.png" alt="">
+        </ion-col>
+        <ion-col>
+          <img src="../../assets/images/icon/step3.png" alt="">
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col class="heading">
+          <h6>
+            <ion-icon class="question" name="help-circle"></ion-icon>
+            <span>Enter Your Work Details</span>
+            <ion-icon class="info" name="information-circle-outline"></ion-icon>
+          </h6>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>
+              <ion-icon name="briefcase"></ion-icon>
+            </ion-label>
+            <ion-select placeholder="Select One" formControlName="details">
+              <ion-select-option *ngFor="let item of occdetails">{{item}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-text color="danger" *ngIf="isSubmitted && errorControl.details.errors?.required">
+            Occupation Details is required.
+          </ion-text>
+        </ion-col>
+  
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>
+              <ion-icon name="cash"></ion-icon> 
+            </ion-label>
+            <ion-input formControlName="annual" placeholder="Annual Income"></ion-input>
+          </ion-item>
+          <ion-text color="danger" *ngIf="isSubmitted && errorControl.annual.errors?.required">
+            Annual Income is required.
+          </ion-text>
+        </ion-col>
+  
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>
+              <ion-icon name="cash"></ion-icon>
+            </ion-label>
+            <ion-input formControlName="net" placeholder="Net Wort"></ion-input>
+          </ion-item>
+          <ion-text color="danger" *ngIf="isSubmitted && errorControl.net.errors?.required">
+            Net Wort is required.
+          </ion-text>
+        </ion-col>
+  
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>
+              <ion-icon name="calendar-clear"></ion-icon>
+            </ion-label>
+            <ion-datetime formControlName="date" placeholder="As a Date" ></ion-datetime>
+          </ion-item>
+          <ion-text color="danger" *ngIf="isSubmitted && errorControl.date.errors?.required">
+            As a Date is required.
+          </ion-text>
+        </ion-col>
+        
+        <ion-col class="ion-text-center">
+          <ion-button type="submit">CONTINUE</ion-button>
+        </ion-col>
+  
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

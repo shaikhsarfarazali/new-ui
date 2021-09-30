@@ -1,0 +1,53 @@
+ul{
+    li{
+        color: #702e8f;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    li::marker{
+        font-size: 30px;
+    }
+}
+.container{
+   margin: 0px;
+   width: 100%;
+}
+.btn{
+   position: relative;
+   text-align: center;
+   width: 85%;
+   margin: auto;
+   input{
+      opacity: 0.0;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0%;
+      left: 0%;
+      z-index: 9;
+  
+   }
+}
+.center{
+   img{
+      width: 50%;
+      margin: auto;
+   }
+   input{
+      width: 50%;
+      left: 25%;
+   }
+}
+.btn{
+   img{
+      margin: 6px;
+      position: relative;
+   }
+}
+ion-button {
+   --border-radius: 9px;
+   width: 50%;
+}
+ion-col{
+   overflow:hidden;
+}

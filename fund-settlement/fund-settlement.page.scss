@@ -1,0 +1,62 @@
+.skip-btn{
+    margin: 10px;
+    --border-radius: 20px;
+    width: 90px;
+}
+
+.cont-box{
+    background: white;
+    border-top:1px solid #707070;
+    border-bottom:1px solid #707070;
+    margin: 25px 0px 45px;
+    .end{
+        color: #707070;
+        float: right;
+    }
+}
+
+.btn{
+    width: 160px;
+    --border-radius: 10px;
+}
+h4{
+    margin: 0px;
+}
+ion-grid{
+    margin: 20px 0px;
+    padding: 0px;
+}
+
+ion-col{
+    h6{    
+        border-radius: 2px;
+        margin: 4px 10px;
+        span{
+            border-left: 3px solid #E9A721;
+            margin-left: 7px;
+        }
+        ion-icon{
+            font-size: 20px;
+            vertical-align: bottom;
+        }
+    }
+}
+
+ion-radio-group{
+    ion-item{
+        border: 1px solid #707070;
+        margin: 15px 0px 15px;
+        border-radius: 11px;
+    }
+}
+
+ion-item{
+    ion-label{
+        margin-left: 10px;
+    }
+}
+
+ion-list{
+    margin: 10px;
+    background-color: transparent;
+}
